@@ -18,4 +18,12 @@ router.get(
   }
 ); // strategy, redirect
 
+// @desc Logout User
+// @route  /auth/logout
+
+router.get("/logout", (req, res) => {
+  req.logout(); // method added by passport middleware
+  res.redirect("/");
+});
+
 module.exports = router;
